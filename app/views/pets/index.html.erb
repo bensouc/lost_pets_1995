@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Les animaux retrouvés</h1>
+
+  <% @pets.each do |pet| %>
+    <div class="card">
+      <div class="card-body">
+        <%= pet.name %>, a été trouvé il y a <%= pet.days_since_found %> jours
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "J'ai trouvé un petit animal!!", new_pet_path, class:'btn btn-primary' %>
+
+</div>

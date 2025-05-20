@@ -1,0 +1,24 @@
+  <%= form_with model: pet do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :species %>
+    <%= f.select :species, Pet::SPECIES %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    <%= f.label :found_on %>
+    <%= f.date_field :found_on %>
+    <%= f.submit %>
+  <% end %>
+<div class="w-50 border p-3 mt-5 border-danger rounded">
+
+<%= simple_form_for pet do |f|%>
+<div class="d-flex justify-content-between">
+  <%= f.input :name %>
+  <%= f.input :location %>
+
+</div>
+  <%= f.input :species, collection: Pet::SPECIES %>
+  <%= f.input :found_on, html5:true %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+</div>
